@@ -1,4 +1,4 @@
-package com.springdemos.springcore.dibasic;
+package com.springdemos.springcore.list;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -8,14 +8,13 @@ public class Test {
 
 		// create the spring container
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-				"com/springdemos/springcore/dibasic/config.xml");
+				"com/springdemos/springcore/list/config.xml");
 
-		// get the employee bean from the container
-		Employee emp = (Employee) context.getBean("emp");
-
+		// get the hospital bean from the container
+		Hospital hosp = (Hospital) context.getBean("hospital");
 
 		// print the bean
-		System.out.println(emp);
+		System.out.println(hosp);
 
 	}
 
