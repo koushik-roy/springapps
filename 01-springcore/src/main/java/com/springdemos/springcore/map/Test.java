@@ -1,4 +1,4 @@
-package com.springdemos.springcore.list;
+package com.springdemos.springcore.map;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -6,16 +6,16 @@ public class Test {
 
 	public static void main(String[] args) {
 
-		// create the spring container
+		// create the spring container - box
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-				"com/springdemos/springcore/list/config.xml");
+				"com/springdemos/springcore/map/config.xml");
 
 		// get the hospital bean from the container
-		Hospital hosp = (Hospital) context.getBean("hospital");
+		Customer customer = (Customer) context.getBean("customer");
 		
 		// print the bean
-		System.out.println(hosp);
-		System.out.println(hosp.getDepartments().getClass());
+		System.out.println(customer);
+		System.out.println(customer.getProducts().getClass());
 	}
 
 }

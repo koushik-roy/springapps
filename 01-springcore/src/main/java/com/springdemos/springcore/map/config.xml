@@ -8,8 +8,23 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<bean name="emp"
-		class="com.springdemos.springcore.dibasic.Employee" 
-		p:id="99" p:name="Max" p:age="36" />
+	<bean name="customer" class="com.springdemos.springcore.map.Customer" p:id="22">
+
+		<property name="products">
+			<map>
+				<entry key="100" value="IPhone" />
+				<entry key="200" value="macbook" />
+				<entry key="300" value="keyboard" />
+				<entry>
+					<key>
+						<value>400</value>
+					</key>
+					<value>MacbookAir</value>
+				</entry>
+			</map>
+		</property>
+
+
+	</bean>
 
 </beans>
