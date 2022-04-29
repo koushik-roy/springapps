@@ -8,12 +8,11 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<bean name="scores"
-		class="com.springdemos.springcore.reftypes.Scores" p:math="80"
-		p:physics="90" p:chemistry="82" />
+	<bean name="patient"
+		class="com.springdemos.springcore.lifecycle.annotations.Patient"
+		p:id="987" />
 
-	<bean name="student"
-		class="com.springdemos.springcore.reftypes.Student" p:scores-ref="scores" />
+	<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" />
 
 
 </beans>
