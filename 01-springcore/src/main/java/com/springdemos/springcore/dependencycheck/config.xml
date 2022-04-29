@@ -8,9 +8,8 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<bean name="patient"
-		class="com.springdemos.springcore.lifecycle.annotations.Patient"
-		p:id="987" />
+	<bean name="prescription"
+		class="com.springdemos.springcore.dependencycheck.Prescription" p:id="111" />
 
 	<context:annotation-config />
 
