@@ -1,4 +1,4 @@
-package com.springdemos.springcore.propertyplaceholder;
+package com.springdemos.springcore.autowiring;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -8,16 +8,13 @@ public class Test {
 
 		// create the spring container - box
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-				"com/springdemos/springcore/propertyplaceholder/config.xml");
+				"com/springdemos/springcore/autowiring/config.xml");
 
-		
 		// get the hospital bean from the container
-		MyDAO mydao = (MyDAO) context.getBean("mydao");
+		Employee emp = (Employee) context.getBean("emp");
 		
 		// print the bean
-		System.out.println(mydao);
-	
-		
+		System.out.println(emp);
 	}
 
 }
