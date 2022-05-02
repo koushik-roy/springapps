@@ -15,10 +15,10 @@ public class Test {
 
 		// print the bean
 		System.out.println(coach1);
-		System.out.println(coach1.hashCode());
-
-		Coach coach2 = (Coach) context.getBean("supercoach");
-		System.out.println(coach2.hashCode());
+//		System.out.println(coach1.hashCode());
+//
+//		Coach coach2 = (Coach) context.getBean("supercoach");
+//		System.out.println(coach2.hashCode());
 	}
 
 }

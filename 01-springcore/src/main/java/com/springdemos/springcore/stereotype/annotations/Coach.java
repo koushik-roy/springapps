@@ -2,6 +2,7 @@ package com.springdemos.springcore.stereotype.annotations;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -20,7 +21,10 @@ public class Coach {
 	private String dbuser;
 
 	@Value("#{topics}")
-	private List<String> topics;
+	private List<String> topicsXYZ;
+	
+	@Autowired
+	private CoachProfile coachProfile;
 
 	public int getId() {
 		return id;
@@ -47,16 +51,26 @@ public class Coach {
 	}
 
 	public List<String> getTopics() {
-		return topics;
+		return topicsXYZ;
 	}
 
 	public void setTopics(List<String> topics) {
-		this.topics = topics;
+		this.topicsXYZ = topics;
+	}
+
+
+	public CoachProfile getCoachProfile() {
+		return coachProfile;
+	}
+
+	public void setCoachProfile(CoachProfile coachProfile) {
+		this.coachProfile = coachProfile;
 	}
 
 	@Override
 	public String toString() {
-		return "Coach [id=" + id + ", name=" + name + ", dbuser=" + dbuser + ", topics=" + topics + "]";
+		return "Coach [id=" + id + ", name=" + name + ", dbuser=" + dbuser + ", topicsXYZ=" + topicsXYZ
+				+ ", coachProfile=" + coachProfile + "]";
 	}
 
 }
