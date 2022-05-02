@@ -15,13 +15,19 @@ public class Coach {
 	private String name;
 	
 	@Autowired
+	@Qualifier("basketBall")
+	private Sport sport1;
+	
+	@Autowired
 	@Qualifier("cricket")
-	private Sport sport;
+	private Sport sport2;
 
 	@Override
 	public String toString() {
-		return "Coach [id=" + id + ", name=" + name + ", sport=" + sport.play() + "]";
+		return "Coach [id=" + id + ", name=" + name + ", sport1=" + sport1.play() + ", sport2=" + sport2.play() + "]";
 	}
+
+	
 
 
 
