@@ -9,10 +9,14 @@ public class Employee {
 	private String name;
 	private int age;
 	
-	@Qualifier("addressInMumbai")
-	@Autowired
+//	@Qualifier("addressInMumbai")
+//	@Autowired
 	private Address address;
 
+	public Employee(@Qualifier("addressInMumbai") Address address) {
+		this.address = address;
+	}
+	
 	public int getId() {
 		return id;
 	}
