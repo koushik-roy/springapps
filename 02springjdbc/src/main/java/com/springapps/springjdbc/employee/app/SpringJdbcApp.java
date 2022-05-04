@@ -1,5 +1,7 @@
 package com.springapps.springjdbc.employee.app;
 
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -19,8 +21,20 @@ public class SpringJdbcApp {
 		
 //		deleteEmployee(employeedao);
 		
-		readEmployee(employeedao);
+//		readEmployee(employeedao);
 		
+		readEmployees(employeedao);
+		
+	}
+
+	private static void readEmployees(EmployeeDao employeedao) {
+		List<Employee> emps = employeedao.read();
+		System.out.println(emps);		
+	}
+
+	private static void readEmployee(EmployeeDao employeedao) {
+		Employee emp = employeedao.read(3);
+		System.out.println(emp);
 	}
 
 	private static void deleteEmployee(EmployeeDao employeedao) {
