@@ -18,5 +18,12 @@
 		class="org.springframework.jdbc.core.JdbcTemplate"
 		p:dataSource-ref="datasource" />
 
+	<bean name="employeedao"
+		class="com.springapps.springjdbc.employee.dao.impl.EmployeeDaoImpl">
+		<property name="jdbcTemplate">
+			<ref bean="jdbctemplate"/>
+		</property>
+	</bean>
+
 
 </beans>
