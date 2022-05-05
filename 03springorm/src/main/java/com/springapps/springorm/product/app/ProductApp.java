@@ -17,7 +17,28 @@ public class ProductApp
     	ApplicationContext context = new ClassPathXmlApplicationContext("com/springapps/springorm/product/config/config.xml");
 		ProductDao productdao = (ProductDao) context.getBean("productDaoImpl");
 		
-		createProduct(productdao);
+//		createProduct(productdao);
+		
+//		updateProduct(productdao);
+		
+		deleteProduct(productdao);
+	}
+
+	private static void deleteProduct(ProductDao productdao) {
+		Product product = new Product();
+		product.setId(1);
+		productdao.delete(product);
+		System.out.println("Product deleted.");
+	}
+
+	private static void updateProduct(ProductDao productdao) {
+		Product product = new Product();
+		product.setId(1);
+		product.setName("iWatch");
+		product.setDescription("best watch");
+		product.setPrice(18000);
+		productdao.update(product);
+		System.out.println("Row updated.");
 	}
 
 	private static void createProduct(ProductDao productdao) {
@@ -27,6 +48,6 @@ public class ProductApp
 		product.setDescription("best watch");
 		product.setPrice(21560);
 		int result = productdao.create(product);
-		System.out.println("Number of rows inserted: " + result);
+		System.out.println("Row Created: " + result);
 	}
 }
